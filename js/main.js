@@ -16,6 +16,7 @@
                 var cell4 = row.insertCell(3);
                 var cell5 = row.insertCell(4);
                 var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
 
                 var code = $('#color-picker').val();
                 var red = parseInt(code.substring(1, 3), 16);
@@ -28,6 +29,12 @@
                 cell4.innerHTML = '<span class="seqno">' + red + '</span>';
                 cell5.innerHTML = '<span class="seqno">' + green + '</span>';
                 cell6.innerHTML = '<span class="seqno">' + blue + '</span>';
+                cell7.innerHTML = '<button class="removeRow">削除</button>';
+            });
+
+            //行を削除する
+            $(document).on('click', '.removeRow', function() {
+              $(this).parents('tr').remove();
             });
 
         });
